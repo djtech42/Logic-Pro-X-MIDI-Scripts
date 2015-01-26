@@ -7,27 +7,20 @@ var velocityValue = 0; // set velocityValue to default value
 function HandleMIDI(event)
 {
 	if (event instanceof NoteOn) {
-		// capture note velocity
-		if (event.velocity >= 80)
+		if (event.velocity >= 80) // capture note velocity
 		{
-			// add modulation if high velocity
-			velocityValue = event.velocity - 40;
+			velocityValue = event.velocity - 40; // add modulation if high velocity
 		}
 		else
 		{
-			// no modulation if low to mid velocity
-			velocityValue = 0;
+			velocityValue = 0; // no modulation if low to mid velocity
 		}
 	}
 
-	// create modulation change
-	var addedMod = new ControlChange;
-	// control change number
-	addedMod.number = 1;
-	// set to calculated value
-	addedMod.value = velocityValue;
-	// send added modulation with note
-	addedMod.send()
+	var addedMod = new ControlChange; // create modulation change
+	addedMod.number = 1; // control change number
+	addedMod.value = velocityValue; // set to calculated value
+	addedMod.send(); // send added modulation with note
 
 	event.send(); // send note to Logic
 }
