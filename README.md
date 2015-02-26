@@ -11,3 +11,5 @@ Click MIDI FX on track -> Scripter -> copy Javascript code into editor
 [Set Note Velocity using Modwheel](modulationToVelocity.js)
 
 [Add Modulation if Key is Pressed Hard](velocityControlledModulation.js)
+
+[Set Increasing Velocity (Build) for Specified Measure Range](automaticVelocityBuilds.js)
